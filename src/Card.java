@@ -17,6 +17,7 @@ public class Card {
 
 	/**
 	 * int value that holds the point value.
+	 * omlm
 	 */
 	private int pointValue;
 
