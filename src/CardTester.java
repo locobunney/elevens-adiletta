@@ -6,9 +6,10 @@ public class CardTester {
 	/**
 	 * The main method in this class checks the Card operations for consistency.
 	 *	@param args is not used.
-	 *jd
+	 *
 	 */
 	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		Card clubs4 = new Card("4","clubs",4);
+                System.out.println(clubs4.toString());
 	}
 }

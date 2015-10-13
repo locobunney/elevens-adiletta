@@ -16,7 +16,7 @@ public class Card {
 
 	/**
 	 * int value that holds the point value.
-	 * omlm
+	 * 
 	 */
 	private int pointValue;
 
@@ -64,21 +64,23 @@ public class Card {
 	}
 
 	/** Compare this card with the argument.
-	 * @param otherCard the other card to compare to this
+	 * @param Card2 the other card to compare to this
 	 * @return true if the rank, suit, and point value of this card
 	 *              are equal to those of the argument;
 	 *         false otherwise.
 	 */
 	public boolean matches(Card Card1, Card Card2) {
-		if (Card1.suit == Card2.suit){
-			if (Card1.rank == Card2.rank){
-				if (Card1.pointValue == Card2.pointValue){
+		if (Card1.suit() == Card2.suit()){
+			if (Card1.rank() == Card2.rank()){
+				if (Card1.pointValue() == Card2.pointValue()){
 					return true;
 				}
 			}
 		}
-		else return false;
-	}
+            else {
+                    return false;
+                }
+        }
 
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
@@ -92,7 +94,7 @@ public class Card {
 	 */
 	@Override
 	public String toString() {
-		String x = (Card1.rank +" of "+ Card1.suit+" (point value = "+pointValue+")");
+		String x = (this.rank +" of "+ this.suit+" (point value = "+this.pointValue()+")");
 		return x;
 	}
 }
