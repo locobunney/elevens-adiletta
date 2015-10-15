@@ -1,11 +1,13 @@
 import java.util.List;
 import java.util.ArrayList;
+
 /**
- *
- * @author Andrew_2
+ * The Deck class represents a shuffled deck of cards.
+ * It provides several operations including
+ *      initialize, shuffle, deal, and check if empty.
  */
 public class Deck {
-    
+
 	/**
 	 * cards contains all the cards in the deck.
 	 */
@@ -27,26 +29,21 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public Deck(String[] rank, String[] suit, int[] pointvalue) {
+	public Deck(String[] ranks, String[] suits, int[] values) {
         cards = new ArrayList<Card>();
-        for (int j = 0; j < rank.length; j++) {
-            for (String suitString : suit){
-                cards.add(new Card(rank[j], suitString, pointvalue[j]));
+        for (int j = 0; j < ranks.length; j++) {
+            for (String suitString : suits){
+                cards.add(new Card(ranks[j], suitString, values[j]));
             }
 	}
-        }
 
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
-	public boolean isEmpty(){
-		if (size() == 0){
-                    return true;
-                }
-                return false;
-                
+	public boolean isEmpty() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
 
 	/**
@@ -54,7 +51,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		return size;
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
 
 	/**
@@ -74,9 +71,6 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         // IS EMPTY if so return null
         size--;
-        if (size == 0){
-            return null;
-        }
         Card c = cards.get(size);
         return c;
 	}
@@ -111,6 +105,7 @@ public class Deck {
 				rtn = rtn + "\n";
 			}
 		}
+
 		rtn = rtn + "\n";
 		return rtn;
 	}
