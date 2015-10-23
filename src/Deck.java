@@ -34,6 +34,8 @@ public class Deck {
                 cards.add(new Card(rank[j], suitString, pointvalue[j]));
             }
 	}
+        this.size=rank.length*suit.length;
+        shuffle();
         }
 
 
@@ -62,8 +64,14 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-	}
+            int r; Card temp;
+            for (int k = 0;k<this.size;k++){
+                r = (int)(Math.random()*this.size);
+                temp = cards.get(k);
+                cards.set(k,cards.get(r));
+                cards.set(r, temp);
+            }
+        }
 
 	/**
 	 * Deals a card from this deck.
