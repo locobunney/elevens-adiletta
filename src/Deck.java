@@ -34,7 +34,7 @@ public class Deck {
                 cards.add(new Card(rank[j], suitString, pointvalue[j]));
             }
 	}
-        this.size=rank.length*suit.length;
+        this.size=cards.size();
         shuffle();
         }
 
@@ -81,10 +81,10 @@ public class Deck {
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         // IS EMPTY if so return null
-        size--;
         if (size == 0){
             return null;
         }
+        size--;
         Card c = cards.get(size);
         return c;
 	}
