@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 /**
  *
- * @author Andrew_2
+ * @author Andrew
  */
 public class Deck {
     
@@ -23,11 +23,12 @@ public class Deck {
 	 * Creates a new <code>Deck</code> instance.<BR>
 	 * It pairs each element of ranks with each element of suits,
 	 * and produces one of the corresponding card.
-	 * @param ranks is an array containing all of the card ranks.
-	 * @param suits is an array containing all of the card suits.
-	 * @param values is an array containing all of the card point values.
+	 * @param rank is an array containing all of the card ranks.
+	 * @param suit is an array containing all of the card suits.
+	 * @param pointvalue is an array containing all of the card point values.
 	 */
 	public Deck(String[] rank, String[] suit, int[] pointvalue) {
+        assert pointvalue.length == rank.length : "length of values != length of ranks";
         cards = new ArrayList<Card>();
         for (int j = 0; j < rank.length; j++) {
             for (String suitString : suit){
@@ -35,6 +36,7 @@ public class Deck {
             }
 	}
         this.size=cards.size();
+        assert this.size == rank.length*suit.length:"deck is not correct size";
         shuffle();
         }
 
@@ -45,6 +47,7 @@ public class Deck {
 	 */
 	public boolean isEmpty(){
 		if (size() == 0){
+                    assert this.size == 0 : "size variable is not empty";
                     return true;
                 }
                 return false;
